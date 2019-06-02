@@ -9,8 +9,18 @@ class App extends React.Component {
       <TodoList />
       <TodoItem />
       </div>
-    )
+    );
   }
+
+  componentDidMount = () => {
+    const todos = localStorage.getItem('todos');
+    if(todos) {
+      console.log('Has todos', todos);
+    } else {
+      console.log('No todos');
+    }
+  }
+
 }
 
 export default App;
