@@ -25,8 +25,8 @@ class App extends React.Component {
   componentDidMount = () => {
     const todos = localStorage.getItem('todos');
     if(todos) {
-      const savedTools = JSON.parse(todos);
-      this.setState({ todos: savedtodos })
+      const savedTodos = JSON.parse(todos);
+      this.setState({ todos: savedTodos });
       console.log('Has todos', todos);
     } else {
       console.log('No todos');
