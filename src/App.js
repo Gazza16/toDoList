@@ -1,16 +1,14 @@
 import React from 'react';
 import TodoList from './TodoList/todoList'
-import TodoItem from './TodoItem/todoItem'
 import AddTodo from './AddTodo/addTodo'
 
 class App extends React.Component {
-
 
   constructor() {
     super();
     this.state = {
       todos: []
-    }
+    };
   }
 
   render() {
@@ -33,9 +31,10 @@ class App extends React.Component {
     }
   }
 
-  addTodo = async (todo) =>
-    await this.setState({ todos: [...this.state.todos, todo];});
+  addTodo = async (todo) => {
+    await this.setState({ todos: [...this.state.todos, todo]});
     localStorage.setItem('todos', JSON.stringify(this.state.todos))
+}
 }
 
 export default App;

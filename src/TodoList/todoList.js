@@ -1,6 +1,7 @@
-import React from 'react'
+import React from 'react';
+import TodoItem from '../TodoItem/todoItem';
 
-class todoList extends React.Component {
+class TodoList extends React.Component {
 
   render() {
 
@@ -10,17 +11,16 @@ class todoList extends React.Component {
     return(
       <div className='todoListContainer'>
         {
-          todos.map((_todo, index) => {
+          todos.map((_todo, _index) => {
             return (
-              <div key={_index}>{_todo}</div>
+              <TodoItem key={_index} todo={_todo}></TodoItem>
             )
-
           })
         }
       </div>
-    )
+    );
   }
 
 }
 
-export default todoList;
+export default TodoList;

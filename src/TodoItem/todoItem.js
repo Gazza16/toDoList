@@ -3,9 +3,16 @@ import React from 'react'
 class todoItem extends React.Component {
 
   render() {
-    return <div>hello from todoItem component.</div>
-  }
 
+    const { todo } = this.props;
+
+    return(
+      <div onClick={this.toggleTodo}>{todo}</div>
+    );
+  }
+toggleTodo = () => {
+  
+  }
 }
 
 export default todoItem;
