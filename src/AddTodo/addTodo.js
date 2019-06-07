@@ -5,7 +5,7 @@ class AddTodo extends React.Component {
   constructor() {
     super();
     this.state = {
-      todo: ''
+      todo: '';
     }
   }
 
@@ -25,8 +25,8 @@ updateInput = (e) => {
 }
 submitTodo = (e) => {
   e.preventDefault();
-  console.log('submit', this.state);
-}
+  this.props.addTodoFn(this.state.todo);
+ }
 }
 
 export default AddTodo;

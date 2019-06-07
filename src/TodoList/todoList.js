@@ -3,7 +3,22 @@ import React from 'react'
 class todoList extends React.Component {
 
   render() {
-    return <div>hello from todoList component.</div>
+
+      const { todos } = this.props;
+
+
+    return(
+      <div className='todoListContainer'>
+        {
+          todos.map((_todo, index) => {
+            return (
+              <div key={_index}>{_todo}</div>
+            )
+
+          })
+        }
+      </div>
+    )
   }
 
 }

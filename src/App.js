@@ -5,6 +5,7 @@ import AddTodo from './AddTodo/addTodo'
 
 class App extends React.Component {
 
+
   constructor() {
     super();
     this.state = {
@@ -15,9 +16,8 @@ class App extends React.Component {
   render() {
     return(
       <div>
-      <TodoList />
-      <TodoItem />
-      <AddTodo />
+        <AddTodo addTodoFn={this.addTodo}></AddTodo>
+        <TodoList todos={this.state.todos}></TodoList>
       </div>
     );
   }
@@ -33,6 +33,9 @@ class App extends React.Component {
     }
   }
 
+  addTodo = async (todo) =>
+    await this.setState({ todos: [...this.state.todos, todo];});
+    localStorage.setItem('todos', JSON.stringify(this.state.todos))
 }
 
 export default App;
